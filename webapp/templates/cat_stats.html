@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+</head>
+<body class="stats">
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static '/happy.jpg' %}" class="img-fluid rounded-start" alt="happy">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p>Cat: {{ name }}</p>
+        <p>Age: {{ age }}</p>
+        <p>Happiness: {{ happiness }}</p>
+        <p>Satiety: {{ satiety }}</p>
+        <p>Cat's state: {{ state }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <select name="action" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+          <option value="play">Play with cat</option>
+          <option value="feed">Feed cat</option>
+          <option value="sleep">Make cat sleep</option>
+        </select>
+        <button type="submit" class="btn btn-warning">Accept</button>
+    </form>
+</body>
+</html>
